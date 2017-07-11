@@ -1,0 +1,496 @@
+/*=============================================================================================================*\
+
+  * Project Name:   APA
+  * Project URI:    www.apa.co.ke
+  * Description:    Official website of the Association of Practitioner in Advertising.
+  * Author:         Zablon Matano(@im_zablon)
+  * Author URI      www.zablonmatano.com
+  *
+  * CONTENTS:
+  * ----------------------------------------------------------------------------------------------------------
+  *
+  * TOOLS
+  * 1.1 - Helper Classes......................A set of classes which contain style attributes used often in projects
+
+  * THEME SETTINGS
+  * 2.1 - Base Resets.........................A set of style rules that help create
+  * 2.2 - Theme Color Scheme ................ Project brand colors
+
+
+  * THEME LAYOUT
+  * 3.1 - Global..............................Sections that are available throughout the entire theme.
+
+        3.1.1 - Header
+        3.1.2 - Content
+        3.1.3 - Footer
+
+  * 3.2 - Modules.............................Reuseable content blocks such as post containers, widgets and buttons.
+
+\*=============================================================================================================*/
+
+/*----------------------------------------*\
+  TOOLS: Helper Classes
+\*----------------------------------------*/
+
+/* Element Positioning
+*----------------------------------*/
+.float-left   { float: left; }
+.float-right  { float: right; }
+
+.fixed-top    { position: fixed; top: 0; }
+.fixed-right  { position: fixed; right: 0; }
+.fixed-bottom { position: fixed; bottom: 0; }
+.fixed-left   { position: fixed; left: 0; }
+
+.h-center   { margin: 0 auto }
+.v-center   { position: absolute; top: 50%; transform: translateY(-50%); } /*Vertically center a block element. Parent should have a fixed height*/
+.absolute-center { width: 90%; position: absolute; top: 50%; left: 50%; transform:translate(-50%, -50%);} /*Centers element both vertically and horizontally. Parent should have a fixed height*/
+
+/* Element Wrappers
+*----------------------------------*/
+.fixed-width  { width: 1140px; }
+.fullwidth    { width: 100%; }
+.half-width   { width: 45%;}
+ 
+/* Clearfix
+*----------------------------------*/
+.clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* stop commented backslash hack */
+
+
+
+/*----------------------------------------*\
+  THEME SETTINGS: Base Resets
+\*----------------------------------------*/
+
+
+/* Generic Resets
+*----------------------------------*/
+* {
+
+   /*Improves text render of -webkit browser*/
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke: 1px rgba (0,0,0,0.1);
+
+  /*Ensures that long strings do not display outside their container*/
+   word-break: break-word;
+
+  /*
+    Ensures that elements deduct their padding and margin 
+    declaration from the parent container thus not interfering with the set layout.
+  */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;    
+   box-sizing: border-box;
+
+ }
+
+
+/* Body Resets
+*----------------------------------*/
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #ffffff;
+  color: #626262;
+  font-size: 1em;
+  line-height: 1.6;
+  font-family: 'Droid Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+p,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Headings
+*----------------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #0f0f0f;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+
+
+/* Text selection
+*----------------------------------*/
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+
+
+/* Placeholder text
+*----------------------------------*/
+::-webkit-input-placeholder {
+  color: #dedede;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #dedede;
+}
+:-ms-input-placeholder {
+  color: #dedede;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #dedede;
+}
+
+
+/*----------------------------------------*\
+
+  THEME SETTINGS: Color Scheme
+  ----------------------------------
+  Primary   : #ff6b00 ;
+  Secondary : #000000 ; 
+  Highlights: #e8e8e8 ;
+  Body-text : #626262 ; 
+  
+\*----------------------------------------*/
+
+
+
+/*----------------------------------------*\
+  THEME LAYOUT: HEADER
+\*----------------------------------------*/
+
+#primary-header {
+  background-color: #ff6b00;
+  padding: 25px 0;
+}
+
+.current {
+  border-bottom: 3px solid #ffff00;
+}
+
+
+/* Logo
+*----------------------------------*/
+
+.logo {
+  display: inline-block;
+  width: 300px;
+  height: 100px;
+  overflow: hidden;
+}
+.logo img {
+  width: 100%;
+}
+
+
+/* Main Navigation
+*----------------------------------*/
+.main-nav {
+  margin: 25px 0 0 30px;
+}
+
+.nav-item {
+  display: inline-block;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1em;
+  list-style-type: none;
+  text-transform: uppercase;
+  margin-right: 20px;
+}
+.nav-item:last-child {
+  margin-right: 0;
+}
+
+.nav-item>a {
+  color: #ffffff;
+  display: block;
+  padding: 5px 7px 12px;
+  text-decoration: none;
+}
+.nav-item>a:hover {
+  border-bottom: 3px solid #ffff00;
+}
+
+
+/* Search Box
+*----------------------------------*/
+.search-box {
+  position: relative;
+  margin-top: 11px; 
+}
+
+.sb-input,
+.sb-btn {
+  border: none;
+}
+
+.sb-input {
+  position: absolute;
+}
+
+.sb-btn {
+  background: url('assets/images/search-icon.png') center left 14px, url('assets/images/search-dots.png') center right 5px;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 20px 20px, 20px 20px;
+  display: inline-block;
+  width: 65px;
+  height: 55px;
+  outline: 0;
+}
+
+.sb-btn:hover,
+.sb-btn:active {
+   background-color: #9e4200;
+}
+
+
+
+
+/*----------------------------------------*\
+  THEME LAYOUT: CONTENT
+\*----------------------------------------*/
+
+/* Banner: hm-banner
+*----------------------------------*/
+
+.hm-banner {
+  background: url('assets/images/hm-banner.png') center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 414px;
+}
+
+/* Banner: pt-banner
+*----------------------------------*/
+.pt-banner {
+  background: url('assets/images/pt-banner.jpg') center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 245px;
+}
+
+/* Section: Page Info
+*----------------------------------*/
+.page-title {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.875em;
+  font-weight: 300;
+  margin: 20px 0;
+}
+
+
+/* Section: Entry Steps
+*----------------------------------*/
+.es-main-content {
+  width: 950px;
+  padding-bottom: 40px;
+}
+
+
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:0px 0px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 0px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+
+
+/* Element: Buttons
+*----------------------------------*/
+.btn {
+  background-color: #ff6b00;
+  border: none;
+  color: #ffffff;
+  display: inline-block;
+  padding: 8px 32px;
+}
+
+
+/*----------------------------------------*\
+  THEME LAYOUT: FOOTER
+\*----------------------------------------*/
+
+#primary-footer {
+  background-color: #000000;
+}
+
+
+/* Footer Widget Area
+*----------------------------------*/
+
+.widget-area {
+  padding: 40px 0;
+}
+
+.about {
+  float: left;
+  width: 570px;
+}
+
+.quick-links,
+.services {
+  float: right;
+  width: 228px;
+}
+
+.ft-widget .widget-title {
+  color: #ff6b00;
+  font-size: 1.125em;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.ft-widget.about p {
+  color: #9e9e9e;
+}
+
+.ft-widget ul li {
+  list-style-type: none;
+}
+.ft-widget ul li a {
+  color: #9e9e9e;
+  display: block;
+  padding: 3px 0;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.ft-widget ul li a:hover {
+  color: #ffffff;
+}
+
+/* Social Media
+*----------------------------------*/
+.social-media-container {
+  display: block;
+  margin-top: 40px;
+}
+
+.social-media-item {
+  display: inline-block;
+  border-radius: 3px;
+  margin-right: 10px;
+  padding: 6px 10px;
+  text-decoration: none;
+}
+.social-media-item:last-of-type {
+  margin-right: 0;
+}
+
+.social-media-item .icon {
+  float: left;
+  width: 16px;
+  height: 16px;
+}
+
+.social-media-item .count {
+  color: #ffffff;
+  margin:0 5px;
+  float: right;
+  text-align: center;
+}
+
+
+.facebook {
+  background-color: #3b5998;
+}
+.twitter {
+  background-color: #55acee;
+}
+.dribbble {
+  background-color: #ea4c89;
+}
+.linkedin {
+  background-color: #0077b5;
+}
+
+/* Hack to horizontally align icon and count */
+.linkedin .icon {
+  margin-top: 3px;
+}
+
+.twitter .icon,
+.dribbble .icon,
+.facebook .icon {
+  margin-top: 4px; 
+}
+
+
+/* Footer Content
+*----------------------------------*/
+
+.footer-content {
+  padding: 10px 0;
+}
+
+.legal-info,
+.copyright-info,
+.dev-signature {
+  display: inline-block;
+  margin-left: -4px;
+  width: 380px;
+}
+
+.legal-info a,
+.copyright-info,
+.dev-signature {
+  color: #404040;
+  font-size: 0.938em;
+}
+
+
+.legal-info a {
+  display: inline-block;
+  text-decoration: none;
+  margin-right: 8px;
+}
+
+.legal-info a:hover {
+  color: #ff6b00;
+}
+
+
+.copyright-info {
+  text-align: center;
+}
+
+.dev-signature {
+  text-align: right;
+}
+.dev-signature a {
+  color: #6e6e6e;
+  display: inline-block;
+  text-decoration: none;
+}
+.dev-signature a:hover {
+  color: #ff6b00;
+}
+
+
+
+
+
+
+
+
+
